@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragmentListLinearLayout">
+
+    <fragment
+        android:id="@+id/fragmentListLinearLayout"
+        android:name="com.lordkajoc.recyclerview.FragmentListLinearLayout"
+        android:label="fragment_list_linear_layout"
+        tools:layout="@layout/fragment_list_linear_layout" >
+        <action
+            android:id="@+id/action_fragmentListLinearLayout_to_fragmentKumpulanKata"
+            app:destination="@id/fragmentKumpulanKata" />
+        <argument
+            android:name="ABJAD"
+            app:argType="string"
+            android:defaultValue="abjad" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentKumpulanKata"
+        android:name="com.lordkajoc.recyclerview.FragmentKumpulanKata"
+        android:label="fragment_kumpulan_kata"
+        tools:layout="@layout/fragment_kumpulan_kata" >
+        <argument
+            android:name="ABJAD"
+            app:argType="string"
+            android:defaultValue="abjad" />
+    </fragment>
+</navigation>

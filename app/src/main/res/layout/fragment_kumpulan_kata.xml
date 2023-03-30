@@ -11,11 +11,10 @@
 
         <include
             android:id="@+id/tb_startword"
-            layout="@layout/toolbar_startword"/>
-
+            layout="@layout/toolbar_startword" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerviewword"
+            android:id="@+id/recyclerviewwordlinear"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/tb_startword" />

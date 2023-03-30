@@ -24,14 +24,12 @@ class FragmentListLinearLayout : Fragment() {
         recyclerabjadLinear = binding.recyclerviewlinear
         recyclerabjadLinear.setHasFixedSize(true)
         showRecyclerListLinear()
-        binding.recyclerviewlinear.setOnClickListener {
-
-        }
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //aktivasi aksi image iconGrid untuk mengubah tampilan list menjadi Grid
         val imagebutton = binding.tbLinear.ivIcgrid
         val fragmentgrid = FragmentListGridLayout()
         imagebutton.setOnClickListener {
@@ -39,7 +37,8 @@ class FragmentListLinearLayout : Fragment() {
         }
     }
 
-
+    //mendapatkan data list abjad dari resource string.xml
+    //lalu dimasukkan pada ArrayList KumpulanAbjad
     private fun getlistabjad(): ArrayList<KumpulanAbjad> {
         val dataNama = resources.getStringArray(R.array.data_abjad)
         val listAbjad = ArrayList<KumpulanAbjad>()
@@ -49,7 +48,7 @@ class FragmentListLinearLayout : Fragment() {
         }
         return listAbjad
     }
-
+    //menyiapkan Method untuk menampilan Data pada List dengan Tampilan Linear Vertical
     private fun showRecyclerListLinear() {
         recyclerabjadLinear.layoutManager = LinearLayoutManager(context)
         val listAbjadAdapter = ListAdapterAbjad(list)
@@ -58,11 +57,10 @@ class FragmentListLinearLayout : Fragment() {
         list.addAll(getlistabjad())
     }
 
+    //Fragment Transaction
     private fun setCurrentFragment(fragment: Fragment): FragmentTransaction =
         parentFragmentManager.beginTransaction().apply {
             replace(R.id.fr_container, fragment)
             commit()
         }
-
-
 }
