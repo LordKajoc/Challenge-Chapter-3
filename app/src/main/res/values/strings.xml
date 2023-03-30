@@ -12,6 +12,22 @@
         <item>H</item>
         <item>I</item>
         <item>J</item>
+        <item>K</item>
+        <item>L</item>
+        <item>M</item>
+        <item>N</item>
+        <item>O</item>
+        <item>P</item>
+        <item>Q</item>
+        <item>R</item>
+        <item>S</item>
+        <item>T</item>
+        <item>U</item>
+        <item>V</item>
+        <item>W</item>
+        <item>X</item>
+        <item>Y</item>
+        <item>Z</item>
     </string-array>
 
     <string-array name="Huruf">
@@ -64,6 +80,86 @@
         <item>Jiji</item>
         <item>Juju</item>
         <item>Jeje</item>
+
+        <item>Kaka</item>
+        <item>Kiki</item>
+        <item>Kuku</item>
+        <item>Keke</item>
+
+        <item>Lala</item>
+        <item>Lili</item>
+        <item>Lulu</item>
+        <item>Lele</item>
+
+        <item>Mama</item>
+        <item>Mimi</item>
+        <item>Mumu</item>
+        <item>Meme</item>
+
+        <item>Nana</item>
+        <item>Nini</item>
+        <item>Nunu</item>
+        <item>Nene</item>
+
+        <item>Oma</item>
+        <item>Omi</item>
+        <item>Omu</item>
+        <item>Ome</item>
+
+        <item>Papa</item>
+        <item>Pipi</item>
+        <item>Pupu</item>
+        <item>Pepe</item>
+
+        <item>Qaqa</item>
+        <item>Qiqi</item>
+        <item>Ququ</item>
+        <item>Qeqe</item>
+
+        <item>Rara</item>
+        <item>Riri</item>
+        <item>Ruru</item>
+        <item>Rere</item>
+
+        <item>Sasa</item>
+        <item>Sisi</item>
+        <item>Susu</item>
+        <item>Sese</item>
+
+        <item>Tata</item>
+        <item>Titi</item>
+        <item>Tutu</item>
+        <item>Tete</item>
+
+        <item>Uwaw</item>
+        <item>Uwiw</item>
+        <item>Uwuw</item>
+        <item>Uwew</item>
+
+        <item>Vava</item>
+        <item>Vivi</item>
+        <item>Vuvu</item>
+        <item>Veve</item>
+
+        <item>Wawa</item>
+        <item>Wiwi</item>
+        <item>Wuwu</item>
+        <item>Wewe</item>
+
+        <item>Xaxa</item>
+        <item>Xixi</item>
+        <item>Xuxu</item>
+        <item>Xexe</item>
+
+        <item>Yaya</item>
+        <item>Yiyi</item>
+        <item>Yuyu</item>
+        <item>Yeye</item>
+
+        <item>Zaza</item>
+        <item>Zizi</item>
+        <item>Zuzu</item>
+        <item>Zeze</item>
 
     </string-array>
 

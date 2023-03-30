@@ -15,7 +15,8 @@ class ListAdapterAbjad(private val listAbjad: ArrayList<KumpulanAbjad>) :
 
     //Membuat holder
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = CardviewListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            CardviewListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 
@@ -23,11 +24,13 @@ class ListAdapterAbjad(private val listAbjad: ArrayList<KumpulanAbjad>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val textviewabjad = listAbjad[position].abjad
         holder.binding.tvAbjad.text = textviewabjad
-        holder.itemView.setOnClickListener(object : View.OnClickListener{
+        holder.itemView.setOnClickListener(object : View.OnClickListener {
             override fun onClick(p0: View?) {
                 val transaction = p0?.context as AppCompatActivity
+                //Mengirim data menggunakan Bundle dengan data yang dibawa textabjad pada list
                 val bundle = Bundle()
                 bundle.putString("ABJAD", textviewabjad)
+                //data dibawa ke FragmentKumpulanKata
                 val kumpulanKataFrag = FragmentKumpulanKata()
                 kumpulanKataFrag.arguments = bundle
                 transaction.supportFragmentManager.beginTransaction()
@@ -37,7 +40,6 @@ class ListAdapterAbjad(private val listAbjad: ArrayList<KumpulanAbjad>) :
             }
         })
     }
-
     override fun getItemCount(): Int {
         return listAbjad.size
     }
