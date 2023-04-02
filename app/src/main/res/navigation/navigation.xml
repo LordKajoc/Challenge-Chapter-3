@@ -3,29 +3,49 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/fragmentListLinearLayout">
+    app:startDestination="@id/listlinearlayout">
 
     <fragment
-        android:id="@+id/fragmentListLinearLayout"
+        android:id="@+id/listlinearlayout"
         android:name="com.lordkajoc.recyclerview.FragmentListLinearLayout"
         android:label="fragment_list_linear_layout"
         tools:layout="@layout/fragment_list_linear_layout" >
-        <action
-            android:id="@+id/action_fragmentListLinearLayout_to_fragmentKumpulanKata"
-            app:destination="@id/fragmentKumpulanKata" />
         <argument
-            android:name="ABJAD"
-            app:argType="string"
-            android:defaultValue="abjad" />
+            android:name="abjad"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_listlinearlayout_to_listKataFragment"
+            app:destination="@id/listKataFragment" />
+        <action
+            android:id="@+id/action_listlinearlayout_to_fragmentListGridLayout"
+            app:destination="@id/fragmentListGridLayout" />
     </fragment>
     <fragment
-        android:id="@+id/fragmentKumpulanKata"
+        android:id="@+id/listKataFragment"
         android:name="com.lordkajoc.recyclerview.FragmentKumpulanKata"
-        android:label="fragment_kumpulan_kata"
+        android:label="fragment_list_kata"
         tools:layout="@layout/fragment_kumpulan_kata" >
         <argument
-            android:name="ABJAD"
+            android:name="abjad"
             app:argType="string"
             android:defaultValue="abjad" />
+        <action
+            android:id="@+id/action_listKataFragment_to_listlinearlayout"
+            app:destination="@id/listlinearlayout" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentListGridLayout"
+        android:name="com.lordkajoc.recyclerview.FragmentListGridLayout"
+        android:label="fragment_list_grid_layout"
+        tools:layout="@layout/fragment_list_grid_layout" >
+        <argument
+            android:name="abjad"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_fragmentListGridLayout_to_listKataFragment"
+            app:destination="@id/listKataFragment" />
+        <action
+            android:id="@+id/action_fragmentListGridLayout_to_listlinearlayout"
+            app:destination="@id/listlinearlayout" />
     </fragment>
 </navigation>

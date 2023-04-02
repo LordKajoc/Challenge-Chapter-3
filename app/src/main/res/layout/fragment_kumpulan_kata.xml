@@ -1,24 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".FragmentKumpulanKata">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <include
+        <androidx.appcompat.widget.Toolbar
             android:id="@+id/tb_startword"
-            layout="@layout/toolbar_startword" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/abu">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerviewwordlinear"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView"
+                    style="@style/textjudul"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/iv_icback"
+                    android:text="Words That Start With" />
+
+                <ImageView
+                    android:id="@+id/iv_icback"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/ic_back" />
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/recycler_view_kataa"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/tb_startword" />
 
     </RelativeLayout>
+    <!-- TODO: Update blank fragment layout -->
 
-</FrameLayout>
+
+</LinearLayout>

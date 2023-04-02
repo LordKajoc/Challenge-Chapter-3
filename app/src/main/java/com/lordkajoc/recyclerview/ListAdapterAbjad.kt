@@ -4,41 +4,50 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.lordkajoc.recyclerview.databinding.CardviewListItemBinding
 
-class ListAdapterAbjad(private val listAbjad: ArrayList<KumpulanAbjad>) :
-    RecyclerView.Adapter<ListAdapterAbjad.ViewHolder>() {
-    //Class ViewHolder
-    class ViewHolder(var binding: CardviewListItemBinding) : RecyclerView.ViewHolder(binding.root)
+class ListAdapterAbjad(
+    private val kumpulanAbjad: ArrayList<KumpulanAbjad>,
+    private val listener: OnItemClickListener
+) : RecyclerView.Adapter<ListAdapterAbjad.ViewHolder>() {
 
-    //Membuat holder
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding =
-            CardviewListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ViewHolder(binding)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.cardview_list_item, parent, false)
+        return ViewHolder(view)
     }
 
-    //Melakukan penentuan data yang akan ditampilkan pada setiap item/baris
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val textviewabjad = listAbjad[position].abjad
-        holder.binding.tvabjad.text = textviewabjad
-        holder.itemView.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(p0: View?) {
-                //Mengirim data menggunakan Bundle dengan data yang dibawa textabjad pada list
-                val bundle = Bundle()
-                bundle.putString("ABJAD", textviewabjad)
-                //data dibawa ke FragmentKumpulanKata
-                val kumpulanKataFrag = FragmentKumpulanKata()
-                kumpulanKataFrag.arguments = bundle
-                holder.itemView.findNavController().navigate(R.id.action_fragmentListLinearLayout_to_fragmentKumpulanKata,bundle)
-            }
-        })
+        holder.bind(kumpulanAbjad[position])
     }
+
     override fun getItemCount(): Int {
-        return listAbjad.size
+        return kumpulanAbjad.size
+    }
+
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
+        View.OnClickListener {
+        private val tvAbjad: TextView = itemView.findViewById(R.id.tv_abjad)
+
+        fun bind(abjad: KumpulanAbjad) {
+            tvAbjad.text = abjad.abjad
+            itemView.setOnClickListener(this)
+        }
+
+        override fun onClick(v: View?) {
+            val position = absoluteAdapterPosition
+            if (position != RecyclerView.NO_POSITION) {
+                listener.onItemClick(kumpulanAbjad[position].abjad)
+            }
+        }
+    }
+
+    interface OnItemClickListener {
+        fun onItemClick(abjad: String)
+        fun onIconClick()
     }
 }
