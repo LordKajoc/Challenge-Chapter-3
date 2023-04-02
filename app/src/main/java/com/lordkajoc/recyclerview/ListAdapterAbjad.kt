@@ -1,15 +1,10 @@
 package com.lordkajoc.recyclerview
 
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.lordkajoc.recyclerview.databinding.CardviewListItemBinding
 
 class ListAdapterAbjad(
     private val kumpulanAbjad: ArrayList<KumpulanAbjad>,
